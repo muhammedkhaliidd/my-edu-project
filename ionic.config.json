@@ -1,0 +1,7 @@
+{
+  "name": "my-edu-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
