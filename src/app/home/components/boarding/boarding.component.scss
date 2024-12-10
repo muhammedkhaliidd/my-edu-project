@@ -1,0 +1,29 @@
+.boarding {
+  padding-inline: 16px;
+  padding-block: 32px 56px;
+  gap: 80px;
+
+  h6 {
+    font-size: 40px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-inline: 110px;
+    padding-block: 110px;
+
+    .first-section {
+      padding-inline: 208px;
+    }
+
+    h6 {
+      font-size: 56;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+
+}
