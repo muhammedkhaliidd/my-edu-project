@@ -1,14 +1,9 @@
-<ion-header [translucent]="false" mode="ios" class="ion-no-border">
-  <ion-toolbar color="primary">
-    <div class="d-flex">
-      <img src="assets/images/logo.svg" alt="logo" width="63" height="27" />
-    </div>
-  </ion-toolbar>
-</ion-header>
+<app-page-header imgSrc="assets/images/logo.svg"></app-page-header>
 
-<ion-content [fullscreen]="true" class="ion-no-border">
-  <div
-    id="container"
-    style="min-height: 1600px; display: flex; flex-direction: column"
-  ></div>
+<ion-content class="ion-no-border">
+  <article class="d-flex flex-column">
+    <app-boarding></app-boarding>
+    <app-enroll-steps></app-enroll-steps>
+  </article>
+  <app-page-footer></app-page-footer>
 </ion-content>

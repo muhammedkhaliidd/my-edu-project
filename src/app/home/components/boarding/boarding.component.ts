@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boarding.component.scss'],
   standalone: true,
 })
-export class BoardingComponent  implements OnInit {
-
-  constructor() { }
+export class BoardingComponent implements OnInit {
+  constructor() {}
 
   ngOnInit() {}
-
 }

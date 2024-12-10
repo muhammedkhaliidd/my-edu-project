@@ -5,15 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-
+import { SharedModule } from '../shared/shared.module';
+import { BoardingComponent } from './components/boarding/boarding.component';
+import { EnrollStepsComponent } from './components/enroll-steps/enroll-steps.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SharedModule,
+    BoardingComponent,
+    EnrollStepsComponent,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
 })
 export class HomePageModule {}
