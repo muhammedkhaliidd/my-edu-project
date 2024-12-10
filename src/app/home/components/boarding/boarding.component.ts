@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IonButton } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,8 +8,7 @@ import { IonButton } from '@ionic/angular/standalone';
   standalone: true,
   imports: [IonButton],
 })
-export class BoardingComponent implements OnInit {
+export class BoardingComponent {
+  @Output() subscibeClicked: EventEmitter<void> = new EventEmitter<void>();
   constructor() {}
-
-  ngOnInit() {}
 }
