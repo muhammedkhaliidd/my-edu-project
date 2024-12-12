@@ -58,8 +58,16 @@
   align-items: center;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .gap-24 {
   gap: 24px;
+}
+
+.gap-48 {
+  gap: 48px;
 }
 
 .border-12 {
@@ -69,6 +77,15 @@
 
 .text-align-center {
   text-align: center;
+}
+
+.rel {
+  position: relative;
+}
+
+.width-height-96 {
+  width: 96px;
+  height: 96px;
 }
 
 ion-header {
