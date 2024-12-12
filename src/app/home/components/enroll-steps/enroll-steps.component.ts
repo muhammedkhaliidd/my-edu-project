@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IonButton } from '@ionic/angular/standalone';
 
 interface Step {
@@ -15,7 +15,7 @@ interface Step {
   imports: [IonButton],
 })
 export class EnrollStepsComponent {
-  subscibeClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Output() subscibeClicked: EventEmitter<void> = new EventEmitter<void>();
   steps: Step[] = [
     {
       icon: 'assets/images/step1.svg',
