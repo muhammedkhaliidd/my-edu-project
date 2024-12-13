@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { SubscribeFG, SubscribeInfoFG } from '../shared/models/subscribe.model';
+import { strictEmailValidator } from '../shared/validators/strict-email.validators';
 
 interface Breadcrumb {
   title: string;
@@ -36,6 +37,7 @@ export class SubscribeComponent implements OnInit {
     this.initSubscribeFG();
   }
 
+  // Initialize the subscribe form group
   initSubscribeFG() {
     this.subscribeFG = new FormGroup<SubscribeFG>({
       info: this.fb.group<SubscribeInfoFG>({
@@ -43,6 +45,7 @@ export class SubscribeComponent implements OnInit {
         email: this.fb.nonNullable.control('', [
           Validators.required,
           Validators.email,
+          strictEmailValidator(),
         ]),
         childName: this.fb.nonNullable.control('', Validators.required),
         childBirthYear: this.fb.nonNullable.control(null, Validators.required),

@@ -3,11 +3,13 @@
 <ion-content [fullscreen]="true">
   <main>
     <article class="d-flex">
+      <!-- Main Form container with the steps -->
       @if (subscribeFG) {
       <form
         [formGroup]="subscribeFG"
         class="main-container flex-2 d-flex flex-column gap-16"
       >
+        <!-- head and breadcrumbs -->
         <section class="d-flex flex-column gap-16">
           <div class="head d-flex flex-column gap-2">
             <h6 class="weight-700 font-xl lh-32 ion-no-margin">Subscribe</h6>
@@ -30,12 +32,15 @@
           <span class="separator secondary"></span>
         </section>
 
+        <!-- switch current step -->
         @switch (currentBreadCrumb.step) { @case (1){
+        <!-- Subscribe Info Form -->
         <app-subscribe-info-form
           [subscribeInfoFG]="subscribeInfoFG"
         ></app-subscribe-info-form>
         } }
 
+        <!-- Submit buttom -->
         <ion-button
           [disabled]="subscribeFG.invalid"
           color="secondary"
@@ -45,6 +50,8 @@
         </ion-button>
       </form>
       }
+
+      <!-- Summary section -->
       <section class="flex-1">
         <app-subscribe-summary></app-subscribe-summary>
       </section>

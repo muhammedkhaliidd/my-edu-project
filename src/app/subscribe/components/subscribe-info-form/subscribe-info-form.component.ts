@@ -50,6 +50,7 @@ export class SubscribeInfoFormComponent implements OnInit {
     return (this.subscribeInfoFG.get(name) as FormControl<any>) || null;
   }
 
+  // This method is used to update the days in the child's birth month
   updateDays(): void {
     const month = this.getControl('childBirthMonth')?.value;
     const year = this.getControl('childBirthYear')?.value;
@@ -66,10 +67,12 @@ export class SubscribeInfoFormComponent implements OnInit {
     }
   }
 
+  // This method is used to check if a topic is selected
   isTopicSelected(topic: Topic): boolean {
     return this.getControl('topics')?.value?.includes(topic);
   }
 
+  // This method is used to toggle a topic and add or remove it from the selected topics
   toggleTopic(topic: Topic): void {
     const topicsControl = this.getControl('topics');
     const topics = topicsControl?.value as Topic[];
