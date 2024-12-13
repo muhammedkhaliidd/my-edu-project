@@ -6,8 +6,8 @@ npm (>= 6.x)
 Angular CLI (>= 12.x)
 
 Installation Steps:
-git clone https://github.com/your-repo-name.git
-cd your-repo-name
+https://github.com/muhammedkhaliidd/my-edu-project.git
+cd my-edu-project
 
 Install dependencies:
 npm install
