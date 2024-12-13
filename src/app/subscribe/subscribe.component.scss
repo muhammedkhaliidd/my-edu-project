@@ -1,0 +1,37 @@
+main {
+  padding: 40px 16px;
+  background: url('../../assets/images/subscribe-bg.png') no-repeat center center;
+  background-size: cover;
+
+  article {
+    flex-direction: column;
+    border: 1px solid #BFB8D7;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0px 0px 52px 0px #B9A9CD33;
+    overflow: hidden;
+
+    .main-container {
+      padding-block: 32px;
+      padding-inline: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 112px 214px;
+
+    article {
+      flex-direction: row;
+
+      .main-container {
+        padding-inline: 32px;
+      }
+
+    }
+
+  }
+}
+
+.separator {
+  background-color: #D1C5FB !important;
+}

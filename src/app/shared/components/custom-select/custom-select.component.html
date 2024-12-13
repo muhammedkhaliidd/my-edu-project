@@ -1,0 +1,13 @@
+<ion-item class="flex-1" lines="none" mode="md" *ngIf="control">
+  <ion-select
+    interface="popover"
+    placeholder="{{ placeholder }}"
+    [formControl]="control"
+  >
+    @for (option of options; track $index) {
+    <ion-select-option value="{{ option.value }}">{{
+      option.viewValue
+    }}</ion-select-option>
+    }
+  </ion-select>
+</ion-item>

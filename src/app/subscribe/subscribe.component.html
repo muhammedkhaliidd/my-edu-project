@@ -1,3 +1,42 @@
-<p>
-  subscribe works!
-</p>
+<app-page-header imgSrc="assets/images/logo.svg"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <main>
+    <article class="d-flex">
+      @if (subscribeFG) {
+      <form
+        [formGroup]="subscribeFG"
+        class="main-container flex-2 d-flex flex-column gap-16"
+      >
+        <section class="d-flex flex-column gap-16">
+          <div class="head d-flex flex-column gap-2">
+            <h6 class="weight-700 font-xl lh-32 ion-no-margin">Subscribe</h6>
+            <p class="weight-400 font-md lh-24 ion-no-margin">
+              to our Monthly Surprise Box
+            </p>
+          </div>
+          <!-- breadcrumbs here -->
+          <span class="separator"></span>
+        </section>
+
+        @switch (step) { @case (1){
+        <app-subscribe-info-form
+          [subscribeInfoFG]="subscribeInfoFG"
+        ></app-subscribe-info-form>
+        } }
+
+        <ion-button
+          [disabled]="subscribeFG.invalid"
+          color="secondary"
+          class="secondary-outline ion-no-margin border-12 w-100"
+        >
+          <span class="weight-900">Continue to payment</span>
+        </ion-button>
+      </form>
+      }
+      <section class="flex-1">
+        <app-subscribe-summary></app-subscribe-summary>
+      </section>
+    </article>
+  </main>
+</ion-content>

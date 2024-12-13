@@ -58,8 +58,36 @@
   align-items: center;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-1 {
   flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.gap-2 {
+  gap: 2px;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+.gap-6 {
+  gap: 6px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-16 {
+  gap: 16px;
 }
 
 .gap-24 {
@@ -130,8 +158,13 @@ ion-button {
     --padding-bottom: 10px;
     --padding-start: 24px;
     --padding-end: 24px;
-    --border: 1px solid var(--ion-color-secondary-contrast);
     --box-shadow: 4px 4px 0px -1px var(--ion-color-secondary-contrast);
+    border: 1px solid var(--ion-color-secondary-contrast);
+    text-transform: initial;
+
+    &.no-border {
+      border: none;
+    }
 
     span {
       font-size: 20px;

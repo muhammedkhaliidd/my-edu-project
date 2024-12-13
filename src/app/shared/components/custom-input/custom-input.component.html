@@ -1,0 +1,11 @@
+<section class="custom-input d-flex flex-column gap-6" *ngIf="control">
+  <label for="{{ labelName }}">{{ labelName }}</label>
+  <ion-item lines="none">
+    <ion-input
+      [formControl]="control"
+      type="{{ type }}"
+      id="{{ labelName }}"
+      placeholder="{{ placeholder }}"
+    ></ion-input>
+  </ion-item>
+</section>

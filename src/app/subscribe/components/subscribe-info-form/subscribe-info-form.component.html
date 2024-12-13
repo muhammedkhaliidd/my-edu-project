@@ -1,0 +1,113 @@
+<form [formGroup]="subscribeInfoFG" class="d-flex flex-column gap-32">
+  <!-- Contact information -->
+  <section class="d-flex flex-column gap-8">
+    <h6 class="weight-700 font-xl lh-32 ion-no-margin">Contact Information</h6>
+    <div class="d-flex flex-column gap-24">
+      <app-custom-input
+        [control]="getControl('name')"
+        labelName="Your Name"
+        placeholder="e.g Osama Alshathri"
+      ></app-custom-input>
+      <app-custom-input
+        [control]="getControl('email')"
+        labelName="Email"
+        type="email"
+        placeholder="Osama@gmail.com"
+      ></app-custom-input>
+    </div>
+  </section>
+
+  <!-- Child information -->
+  <section class="d-flex flex-column gap-8">
+    <h6 class="weight-700 font-xl lh-32 ion-no-margin">Child’s Information</h6>
+    <div class="d-flex flex-column gap-24">
+      <app-custom-input
+        [control]="getControl('childName')"
+        labelName="Child’s Full Name"
+        placeholder="e.g Sarah Mohammad"
+      ></app-custom-input>
+
+      <div class="d-flex flex-column gap-6">
+        <label for="child-name">Child’s Date of Birth</label>
+        <div class="d-flex gap-6">
+          <app-custom-select
+            class="flex-1"
+            [options]="availableDays"
+            [control]="getControl('childBirthDay')"
+            placeholder="Date"
+          ></app-custom-select>
+
+          <app-custom-select
+            class="flex-1"
+            [options]="months"
+            [control]="getControl('childBirthMonth')"
+            placeholder="Month"
+          ></app-custom-select>
+
+          <app-custom-select
+            class="flex-1"
+            [options]="years"
+            [control]="getControl('childBirthYear')"
+            placeholder="Year"
+          ></app-custom-select>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column gap-24">
+      <div class="d-flex flex-column gap-6">
+        <label for="child-name">Grade</label>
+
+        <app-custom-select
+          [options]="grades"
+          [control]="getControl('childGrade')"
+          placeholder="e.g Grade 2"
+        ></app-custom-select>
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-column gap-24"
+      *ngIf="getControl('childGender') as childGenderControl"
+    >
+      <div class="d-flex flex-column gap-6">
+        <label for="child-name">Gender</label>
+        <ion-radio-group
+          value="space-between"
+          [formControl]="childGenderControl"
+          class="d-flex gap-8"
+        >
+          <ion-item lines="none" class="flex-1" mode="ios">
+            <ion-radio value="boy" justify="space-between">Boy</ion-radio>
+          </ion-item>
+          <ion-item lines="none" class="flex-1" mode="ios">
+            <ion-radio value="girl" justify="space-between">Girl</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="d-flex flex-column gap-8">
+    <h6 class="weight-700 font-xl lh-32 ion-no-margin">
+      As a parent select any 3 topics
+    </h6>
+    <div class="d-flex align-center gap-8 flex-wrap">
+      <ion-chip
+        *ngFor="let topic of topics"
+        [outline]="true"
+        class="ion-no-margin"
+        [class.selected]="isTopicSelected(topic)"
+        (click)="toggleTopic(topic)"
+        [disabled]="
+          !isTopicSelected(topic) && getControl('topics')?.value?.length >= 3
+        "
+      >
+        <ion-label class="weight-400 font-md lh-24">{{
+          topic | titlecase
+        }}</ion-label>
+      </ion-chip>
+    </div>
+  </section>
+</form>
