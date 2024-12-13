@@ -1,9 +1,17 @@
 .white-txt {
-  color: var(--white-txt);
+  color: var(--white);
+}
+
+.black-txt {
+  color: var(--black);
+}
+
+.font-xm {
+  font-size: 12px;
 }
 
 .font-sm {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .font-md {
@@ -35,6 +43,14 @@
 }
 
 
+.lh-21 {
+  line-height: 21px;
+}
+
+.lh-24 {
+  line-height: 24px;
+}
+
 .lh-28 {
   line-height: 28px;
 }
@@ -43,6 +59,14 @@
   line-height: 30px;
 }
 
+.lh-32 {
+  line-height: 32px;
+}
+
 .lh-48 {
   line-height: 48px;
+}
+
+.underline {
+  text-decoration: underline;
 }

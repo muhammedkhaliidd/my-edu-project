@@ -1,3 +1,39 @@
-<p>
-  enroll-steps works!
-</p>
+<article class="enroll-steps d-flex flex-column align-center rel">
+  <img class="steps-bg" src="assets/images/steps-bg.png" alt="steps-bg" />
+  <section class="info d-flex flex-column align-center">
+    <span>Discover</span>
+    <h6 class="text-align-center">
+      How It Works: Subscribe and Receive Your Surprise Box
+    </h6>
+    <p class="text-align-center ion-no-margin">
+      Subscribe to our surprise subscription box and give your child the gift of
+      learning. Each month, we curate a box filled with educational materials
+      tailored to your child's age and interests.
+    </p>
+  </section>
+  <section class="steps-container d-flex flex-column align-center gap-48">
+    <section class="steps d-flex">
+      @for (step of steps; track $index) {
+      <div class="d-flex flex-column align-center gap-24 flex-1">
+        <img
+          src="{{ step.icon }}"
+          alt="{{ step.title1 }}"
+          class="width-height-96"
+        />
+        <div class="d-flex flex-column text-align-center">
+          <h6 class="ion-no-margin">{{ step.title1 }}</h6>
+          <h6 class="ion-no-margin">{{ step.title2 }}</h6>
+        </div>
+        <p class="ion-no-margin text-align-center">{{ step.description }}</p>
+      </div>
+      }
+    </section>
+    <ion-button
+      (click)="subscibeClicked.emit()"
+      color="secondary"
+      class="secondary-outline ion-no-margin border-12"
+    >
+      <span class="weight-900">Subscribe Now</span>
+    </ion-button>
+  </section>
+</article>

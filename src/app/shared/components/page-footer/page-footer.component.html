@@ -1,3 +1,55 @@
-<p>
-  page-footer works!
-</p>
+<article class="page-footer d-flex flex-col flex-column gap-48">
+  @if(showSubscribe){
+  <section class="subscribe-section d-flex flex-column gap-48">
+    <div class="d-flex flex-column gap-32">
+      <h6 class="ion-no-margin weight-900 black-txt lh-28">Logo</h6>
+      <div class="d-flex flex-column gap-16">
+        @for (link of links; track $index) {
+        <a
+          href="{{ link.url }}"
+          class="ion-no-margin font-md lh-24 weight-600 black-txt"
+          >{{ link.label }}</a
+        >
+        }
+      </div>
+    </div>
+    <div class="d-flex flex-column gap-12">
+      <h6 class="ion-no-margin weight-600 font-md lh-24 black-txt">
+        Subscribe
+      </h6>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        required
+        [(ngModel)]="email"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        class="black-txt"
+      />
+      <button class="black-txt lh-24 font-md">Subscribe</button>
+      <p class="ion-no-margin weight-600 font-md lh-24 black-txt">
+        By subscribing you agree to with our
+        <a href="#privacy" class="underline black-txt">Privacy Policy</a>
+      </p>
+    </div>
+  </section>
+  }
+  <section class="terms-conditions-container d-flex">
+    <div class="terms-conditions d-flex flex-column gap-32 w-100">
+      <span class="separator"></span>
+      <div class="actions-container d-flex gap-32">
+        <div class="actions d-flex">
+          <a href="">
+            <span>Privacy Policy</span>
+          </a>
+          <a href="">
+            <span>Terms of service</span>
+          </a>
+          <a href="">
+            <span>Cookies Settings</span>
+          </a>
+        </div>
+        <span class="rights">© 2023 MyEdu. All rights reserved.</span>
+      </div>
+    </div>
+  </section>
+</article>

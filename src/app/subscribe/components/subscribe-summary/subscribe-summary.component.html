@@ -1,0 +1,68 @@
+<article class="subscribe-summary d-flex flex-column gap-24 h-100">
+  <!-- Head section -->
+  <section class="head d-flex flex-column gap-2">
+    <h6 class="weight-700 font-xl lh-32 ion-no-margin">Summary</h6>
+    <p class="weight-400 font-md lh-24 ion-no-margin">
+      of your Monthly Surprise Box
+    </p>
+  </section>
+
+  <!-- Summary box section -->
+  @if (summary) {
+  <section class="d-flex summary-box gap-12 border-8">
+    <div class="flex-2 d-flex flex-column">
+      <h6 class="ion-no-margin weight-700 font-md lh-24">{{ summary.name }}</h6>
+      <p class="ion-no-margin weight-400 font-xs lh-16">X{{ summary.count }}</p>
+    </div>
+    <div class="flex-1 d-flex flex-column">
+      <h6 class="ion-no-margin weight-700 font-md lh-24">
+        <span class="weight-400">{{ currency }}</span> {{ summary.price }}
+      </h6>
+      <p class="ion-no-margin weight-400 font-xs lh-16">
+        {{ summary.type | titlecase }}
+      </p>
+    </div>
+  </section>
+  }
+
+  <!-- Summary details section -->
+  <section class="d-flex flex-column gap-21">
+    <div class="d-flex flex-column gap-11">
+      <div class="d-flex align-center justify-between gap-16">
+        <h6 class="ion-no-margin weight-400 font-sm lh-21">Subtotal</h6>
+        <h6 class="ion-no-margin weight-700 font-md lh-24">
+          <span class="weight-400">{{ currency }}</span> {{ summary.subtotal }}
+        </h6>
+      </div>
+      <div class="d-flex align-center justify-between gap-16">
+        <h6 class="ion-no-margin weight-400 font-sm lh-21">Shipping</h6>
+        @if (summary.shipping) {
+        <h6 class="ion-no-margin weight-700 font-md lh-24">
+          <span class="weight-400">{{ currency }}</span> {{ summary.shipping }}
+        </h6>
+        }@else {
+        <p class="ion-no-margin weight-400 font-xs lh-16 medium-color">Free</p>
+        }
+      </div>
+      <div class="d-flex align-center justify-between gap-16">
+        <h6 class="ion-no-margin weight-400 font-sm lh-21">Texes</h6>
+        @if (summary.tax) {
+        <h6 class="ion-no-margin weight-700 font-md lh-24">
+          <span class="weight-400">{{ currency }}</span>
+          {{ summary.tax | number : "1.1" }}
+        </h6>
+        }@else {
+        <p class="ion-no-margin weight-400 font-xs lh-16 medium-color">Free</p>
+        }
+      </div>
+    </div>
+    <span class="separator secondary"></span>
+    <div class="d-flex align-center justify-between gap-16">
+      <h6 class="ion-no-margin weight-700 font-sm lh-21">Total</h6>
+      <h6 class="ion-no-margin weight-700 font-md lh-24">
+        <span class="weight-400">{{ currency }}</span> {{ summary.total }}
+      </h6>
+    </div>
+    <div></div>
+  </section>
+</article>

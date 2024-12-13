@@ -1,0 +1,66 @@
+ion-item {
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px 0px #1018280D;
+  border-radius: 8px;
+  --padding-start: 14px;
+  --padding-inline-end: 14px;
+  --padding-bottom: 10px;
+  --padding-top: 10px;
+  height: fit-content;
+  --min-height: fit-content;
+
+  ion-select {
+    min-height: fit-content;
+    height: 24px;
+
+    &::part(icon) {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+ion-radio.ios {
+  height: 24px;
+
+  &::part(container) {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #D0D5DD;
+    border-radius: 50%;
+  }
+
+  &::part(mark) {
+    transform: rotate(45deg);
+    border-width: 0.125rem;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #D0D5DD;
+  }
+
+  &.radio-checked::part(container) {
+    border-color: var(--ion-color-primary);
+  }
+
+  &.radio-checked::part(mark) {
+    border-color: var(--ion-color-primary);
+  }
+}
+
+ion-chip {
+  --background: transparent;
+  --color: #667085;
+  border-color: #E1E3E6;
+  box-shadow: 0px 1px 2px 0px #1018280D;
+  min-width: fit-content;
+  padding: 4px 20px;
+
+  &.selected {
+    --background: #F4F1FE;
+    background: #F4F1FE;
+    --color: var(--ion-color-primary);
+    border-color: var(--ion-color-primary);
+  }
+
+}

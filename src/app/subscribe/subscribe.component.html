@@ -1,0 +1,60 @@
+<app-page-header imgSrc="assets/images/logo.svg"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <main>
+    <article class="d-flex">
+      <!-- Main Form container with the steps -->
+      @if (subscribeFG) {
+      <form
+        [formGroup]="subscribeFG"
+        class="main-container flex-2 d-flex flex-column gap-16"
+      >
+        <!-- head and breadcrumbs -->
+        <section class="d-flex flex-column gap-16">
+          <div class="head d-flex flex-column gap-2">
+            <h6 class="weight-700 font-xl lh-32 ion-no-margin">Subscribe</h6>
+            <p class="weight-400 font-md lh-24 ion-no-margin">
+              to our Monthly Surprise Box
+            </p>
+          </div>
+          <ion-breadcrumbs>
+            @for (breadCrumb of breadCrumbs; track $index) {
+            <ion-breadcrumb
+              (click)="breadCrumbClicked(breadCrumb)"
+              [class.selected]="currentBreadCrumb.step === breadCrumb.step"
+            >
+              {{ breadCrumb.title }}
+              <ion-icon slot="separator" name="chevron-forward"></ion-icon>
+            </ion-breadcrumb>
+            }
+          </ion-breadcrumbs>
+
+          <span class="separator secondary"></span>
+        </section>
+
+        <!-- switch current step -->
+        @switch (currentBreadCrumb.step) { @case (1){
+        <!-- Subscribe Info Form -->
+        <app-subscribe-info-form
+          [subscribeInfoFG]="subscribeInfoFG"
+        ></app-subscribe-info-form>
+        } }
+
+        <!-- Submit buttom -->
+        <ion-button
+          [disabled]="subscribeFG.invalid"
+          color="secondary"
+          class="secondary-outline ion-no-margin border-12 w-100"
+        >
+          <span class="weight-900">Continue to payment</span>
+        </ion-button>
+      </form>
+      }
+
+      <!-- Summary section -->
+      <section class="flex-1">
+        <app-subscribe-summary></app-subscribe-summary>
+      </section>
+    </article>
+  </main>
+</ion-content>

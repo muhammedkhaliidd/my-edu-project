@@ -1,0 +1,56 @@
+.page-footer {
+  padding: 48px 20px;
+
+  .terms-conditions-container {
+    gap: 25px;
+
+    .actions-container {
+      flex-direction: column;
+      color: var(--black);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+
+      .actions {
+        flex-direction: column;
+        gap: 16px;
+
+        a {
+          text-decoration: underline;
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 80px 64px;
+
+    .subscribe-section {
+      display: none;
+    }
+
+    .terms-conditions-container {
+      gap: 33px;
+
+      .actions-container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .actions {
+          gap: 24px;
+        }
+      }
+    }
+  }
+}
+
+.subscribe-section {
+
+  input,
+  button {
+    border: 1px solid var(--black);
+    padding: 12px;
+    background-color: transparent;
+  }
+}
