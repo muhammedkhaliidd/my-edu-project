@@ -2,8 +2,12 @@
   color: var(--white);
 }
 
-.font-sm {
+.font-xm {
   font-size: 12px;
+}
+
+.font-sm {
+  font-size: 14px;
 }
 
 .font-md {
@@ -34,6 +38,10 @@
   font-weight: 900;
 }
 
+
+.lh-21 {
+  line-height: 21px;
+}
 
 .lh-24 {
   line-height: 24px;

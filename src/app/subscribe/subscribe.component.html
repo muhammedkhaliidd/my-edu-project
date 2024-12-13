@@ -15,11 +15,22 @@
               to our Monthly Surprise Box
             </p>
           </div>
-          <!-- breadcrumbs here -->
-          <span class="separator"></span>
+          <ion-breadcrumbs>
+            @for (breadCrumb of breadCrumbs; track $index) {
+            <ion-breadcrumb
+              (click)="breadCrumbClicked(breadCrumb)"
+              [class.selected]="currentBreadCrumb.step === breadCrumb.step"
+            >
+              {{ breadCrumb.title }}
+              <ion-icon slot="separator" name="chevron-forward"></ion-icon>
+            </ion-breadcrumb>
+            }
+          </ion-breadcrumbs>
+
+          <span class="separator secondary"></span>
         </section>
 
-        @switch (step) { @case (1){
+        @switch (currentBreadCrumb.step) { @case (1){
         <app-subscribe-info-form
           [subscribeInfoFG]="subscribeInfoFG"
         ></app-subscribe-info-form>

@@ -54,6 +54,10 @@
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
 }
@@ -86,8 +90,20 @@
   gap: 8px;
 }
 
+.gap-11 {
+  gap: 11px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
 .gap-16 {
   gap: 16px;
+}
+
+.gap-21 {
+  gap: 21px;
 }
 
 .gap-24 {
@@ -100,6 +116,11 @@
 
 .gap-48 {
   gap: 48px;
+}
+
+.border-8 {
+  border-radius: 8px;
+  --border-radius: 8px;
 }
 
 .border-12 {
@@ -124,6 +145,10 @@
   height: 1px;
   background-color: #000000;
   width: 100%;
+
+  &.secondary {
+    background-color: #D1C5FB !important;
+  }
 }
 
 .w-100 {

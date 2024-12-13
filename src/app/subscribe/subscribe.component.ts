@@ -7,6 +7,11 @@ import {
 } from '@angular/forms';
 import { SubscribeFG, SubscribeInfoFG } from '../shared/models/subscribe.model';
 
+interface Breadcrumb {
+  title: string;
+  step: number;
+}
+
 @Component({
   selector: 'app-subscribe',
   templateUrl: './subscribe.component.html',
@@ -14,7 +19,17 @@ import { SubscribeFG, SubscribeInfoFG } from '../shared/models/subscribe.model';
 })
 export class SubscribeComponent implements OnInit {
   subscribeFG!: FormGroup<SubscribeFG>;
-  step = 1;
+
+  breadCrumbs: Breadcrumb[] = [
+    { title: 'Cart', step: 0 },
+    { title: 'Information', step: 1 },
+    { title: 'Shipping', step: 2 },
+    { title: 'Payment', step: 3 },
+  ];
+  currentBreadCrumb: Breadcrumb = {
+    title: 'Information',
+    step: 1,
+  };
   constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit() {
@@ -46,5 +61,9 @@ export class SubscribeComponent implements OnInit {
 
   get subscribeInfoFG(): FormGroup<SubscribeInfoFG> {
     return this.subscribeFG.get('info') as FormGroup<SubscribeInfoFG>;
+  }
+
+  breadCrumbClicked(breadCrumb: Breadcrumb) {
+    this.currentBreadCrumb = breadCrumb;
   }
 }

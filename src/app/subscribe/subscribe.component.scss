@@ -32,6 +32,31 @@ main {
   }
 }
 
-.separator {
-  background-color: #D1C5FB !important;
+ion-breadcrumb {
+  cursor: pointer;
+
+  ion-icon {
+    color: #707070;
+    width: 10px;
+    height: 10px;
+  }
+
+  &::part(native) {
+    padding: 0;
+    color: #707070;
+    font-size: 12px;
+    line-height: 18px;
+
+    &.breadcrumb-native {
+      font-weight: 600;
+      color: #333333;
+    }
+  }
+
+  &.selected {
+    &::part(native) {
+      font-weight: 600;
+      color: #333333;
+    }
+  }
 }
