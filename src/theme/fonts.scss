@@ -2,6 +2,10 @@
   color: var(--white);
 }
 
+.black-txt {
+  color: var(--black);
+}
+
 .font-xm {
   font-size: 12px;
 }
@@ -61,4 +65,8 @@
 
 .lh-48 {
   line-height: 48px;
+}
+
+.underline {
+  text-decoration: underline;
 }

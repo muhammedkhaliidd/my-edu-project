@@ -4,7 +4,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { PageFooterComponent } from './components/page-footer/page-footer.component';
 import { IonicModule } from '@ionic/angular';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { CustomSelectComponent } from './components/custom-select/custom-select.
     CustomInputComponent,
     CustomSelectComponent,
   ],
-  imports: [CommonModule, IonicModule, ReactiveFormsModule],
+  imports: [CommonModule, IonicModule, ReactiveFormsModule, FormsModule],
   exports: [
     PageHeaderComponent,
     PageFooterComponent,
