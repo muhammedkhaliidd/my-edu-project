@@ -47,7 +47,7 @@ export class SubscribeInfoFormComponent implements OnInit {
   }
 
   getControl(name: keyof SubscribeInfoFG): FormControl<any> | null {
-    return (this.subscribeInfoFG.get(name) as FormControl<any>) || null;
+    return (this.subscribeInfoFG?.get(name) as FormControl<any>) || null;
   }
 
   // This method is used to update the days in the child's birth month
